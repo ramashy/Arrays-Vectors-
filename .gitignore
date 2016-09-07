@@ -1,0 +1,51 @@
+/*
+This program demostrat store data, arrays and vectors 
+Developer : Shyanaka Rama
+*/
+
+#include <iostream> 
+#include <vector> // Vector using
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    vector<int> hours; //hours in empty vector
+    vector<double> payRate; //rate in empty vector
+    int numEmployees;
+    
+    cout<<"How many employees you have : ";
+    cin >> numEmployees;
+    cout<<"Please enter the hours each employee worked and their pay rate"<<endl;
+    cout<<"______________________________________________________________"<<endl;
+    
+    for(int count=1; count<=numEmployees; count++)
+    {
+        int temp_hours;
+        double temp_rate;
+        
+        cout<<"Enter the employee number "<<count<<" work hours : "<<setw(6);
+        cin >> temp_hours;
+        hours.push_back(temp_hours); //adding elements to hours
+        cout<<"Enter the employee number "<<count<<" pay rate : "<<setw(6);
+        cin >> temp_rate;
+        payRate.push_back(temp_rate); //adding elements to rate 
+        
+    }
+    
+    
+    
+    cout<<"Here is the gross pay for each employee : \n";
+    
+    for (int count=1; count <= numEmployees; count++)
+    {
+       
+        //cout<< hours[count]<<endl;
+       // cout<<payRate[count]<< endl;
+        double gross_pay = hours[count] * payRate[count];
+       cout << "Employee number "<<count<<" gross salary is : "<<gross_pay<<endl;
+    }
+    
+    return 0;
+}
